@@ -1,5 +1,10 @@
+plugins {
+  id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'idea'
+apply plugin: 'jacoco'
 
 repositories {
   jcenter()
@@ -12,4 +17,15 @@ dependencies {
   compile 'org.codehaus.groovy:groovy-all:2.4.5'
   testCompile 'cglib:cglib-nodep:3.1'
   testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+jacoco {
+    toolVersion = "0.7.6.201602180812"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
 }
