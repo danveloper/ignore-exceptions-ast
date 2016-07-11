@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/danveloper/ignore-exceptions-ast/badge.svg?branch=master)](https://coveralls.io/github/danveloper/ignore-exceptions-ast?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/danveloper/ignore-exceptions-ast/badge.png?branch=master)](https://coveralls.io/github/danveloper/ignore-exceptions-ast?branch=master)
 
 Ignore Exceptions Groovy AST Transformation
 ---
