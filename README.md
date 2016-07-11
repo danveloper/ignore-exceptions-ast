@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/danveloper/ignore-exceptions-ast.svg?branch=master)](https://travis-ci.org/danveloper/ignore-exceptions-ast)
 [![Coverage Status](https://coveralls.io/repos/github/danveloper/ignore-exceptions-ast/badge.png?branch=master)](https://coveralls.io/github/danveloper/ignore-exceptions-ast?branch=master)
+
 [![forthebadge](http://forthebadge.com/images/badges/fuck-it-ship-it.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/reading-6th-grade-level.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/makes-people-smile.svg)](http://forthebadge.com)
 
