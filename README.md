@@ -1,10 +1,12 @@
 [![Coverage Status](https://coveralls.io/repos/github/danveloper/ignore-exceptions-ast/badge.svg?branch=master)](https://coveralls.io/github/danveloper/ignore-exceptions-ast?branch=master)
 
-= Ignore Exceptions Groovy AST Transformation
+Ignore Exceptions Groovy AST Transformation
+---
 
 This provides provides a local AST transform to ignore all exceptions thrown from a method.
 
-== Usage
+Usage
+---
 
 ```groovy
 package app
@@ -25,10 +27,12 @@ class Main {
 
 Run the code and notice that no exception is thrown!
 
-== License
+License
+---
 
 STEAL THIS CODE PL™
 
-== Author
+Author
+---
 
 https://twitter.com/danveloper[@danveloper]
