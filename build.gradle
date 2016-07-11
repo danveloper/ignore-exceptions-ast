@@ -5,6 +5,9 @@ repositories {
   jcenter()
 }
 
+group = "com.github.danveloper.ast"
+version = "1.0.0-rc-1"
+
 dependencies {
   compile 'org.codehaus.groovy:groovy-all:2.4.5'
   testCompile 'cglib:cglib-nodep:3.1'
