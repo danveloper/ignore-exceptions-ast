@@ -38,8 +38,8 @@ class Main {
 }
 ```
 
-<1> Annotate your method with `@IgnoreExceptions`.
-<2> Have your method throw an exception.
+ 1. Annotate your method with `@IgnoreExceptions`.
+ 2. Have your method throw an exception.
 
 Run the code and notice that no exception is thrown!
 
