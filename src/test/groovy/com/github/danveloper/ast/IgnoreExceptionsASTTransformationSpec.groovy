@@ -1,16 +1,18 @@
 package com.github.danveloper.ast
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 import java.util.concurrent.Callable
 
 class IgnoreExceptionsASTTransformationSpec extends Specification {
 
-  void "should work"() {
+  @Unroll
+  void "should work for #annotation"() {
     given:
     def clazz = (Class<Callable>)new GroovyClassLoader(this.class.classLoader).parseClass("""
       class Any implements java.util.concurrent.Callable {
-        @com.github.danveloper.ast.IgnoreExceptions
+        @com.github.danveloper.ast.${annotation}
         def call() {
           throw new RuntimeException()
         }
@@ -25,5 +27,8 @@ class IgnoreExceptionsASTTransformationSpec extends Specification {
 
     then:
     notThrown(RuntimeException)
+
+    where:
+    annotation << ["IgnoreExceptions", "Pokemon"]
   }
 }
