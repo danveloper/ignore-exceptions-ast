@@ -65,7 +65,7 @@ publishing {
 
 bintrayUpload { task ->
   doFirst {
-    if (isSnapshot) {
+    if (project.version.endsWith("-SNAPSHOT")) {
       throw new GradleException('Cannot publish SNAPSHOT versions to BinTray!')
     }
   }

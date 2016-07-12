@@ -12,6 +12,18 @@ This provides provides a local AST transform to ignore all exceptions thrown fro
 Usage
 ---
 
+Add the artifact to your build:
+
+```groovy
+repositories {
+  jcenter()
+}
+
+dependencies {
+  compile 'com.github.danveloper.ast:ignore-exceptions-ast:1.0.0-rc-1'
+}
+```
+
 ```groovy
 package app
 
