@@ -7,7 +7,7 @@
 Ignore Exceptions Groovy AST Transformation
 ---
 
-This provides provides a local AST transform to ignore all exceptions thrown from a method.
+This provides a local AST transform to ignore all exceptions thrown from a method.
 
 Usage
 ---
