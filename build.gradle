@@ -1,3 +1,12 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+  }
+}
+
 plugins {
   id 'com.github.kt3k.coveralls' version '2.6.3'
 }
@@ -5,6 +14,9 @@ plugins {
 apply plugin: 'groovy'
 apply plugin: 'idea'
 apply plugin: 'jacoco'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 repositories {
   jcenter()
@@ -34,4 +46,46 @@ jacocoTestReport {
         csv.enabled = false
         html.enabled = true
     }
+}
+
+task sourceJar(type: Jar) {
+  classifier "sources"
+  from sourceSets.main.allJava
+}
+
+publishing {
+  publications {
+    maven(MavenPublication) {
+      from components.java
+      artifact sourceJar
+    }
+
+  }
+}
+
+bintrayUpload { task ->
+  doFirst {
+    if (isSnapshot) {
+      throw new GradleException('Cannot publish SNAPSHOT versions to BinTray!')
+    }
+  }
+  gradle.taskGraph.whenReady { taskGraph ->
+    if (taskGraph.hasTask(task)) {
+      task.user = bintrayUser
+      task.apiKey = bintrayKey
+    }
+  }
+}
+
+bintray {
+  publications = ['maven']
+  publish = true
+  dryRun = false
+  pkg {
+    name = "ignore-exceptions-ast"
+    userOrg = "danveloper"
+    repo = 'maven'
+    licenses = ['WTFPL']
+    labels = ['groovy']
+  }
 }
