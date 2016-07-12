@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.danveloper.ast:ignore-exceptions-ast:1.0.0-rc-1'
+  compile 'com.github.danveloper.ast:ignore-exceptions-ast:1.0.0-rc-2'
 }
 ```
 
@@ -44,6 +44,22 @@ class Main {
  2. Have your method throw an exception.
 
 Run the code and notice that no exception is thrown!
+
+Likewise, you can use the `@Pokemon` annotation (gotta catch 'em all):
+
+```groovy
+package app
+
+import com.github.danveloper.ast.Pokemon
+
+class Main {
+
+  @Pokemon
+  public static void main(String[] args) {
+    throw new RuntimeException()
+  }
+}
+```
 
 License
 ---

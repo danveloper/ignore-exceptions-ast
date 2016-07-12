@@ -23,7 +23,7 @@ repositories {
 }
 
 group = "com.github.danveloper.ast"
-version = "1.0.0-rc-1"
+version = "1.0.0-rc-2"
 
 dependencies {
   compile 'org.codehaus.groovy:groovy-all:2.4.5'
